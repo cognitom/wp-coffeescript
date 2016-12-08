@@ -23,31 +23,31 @@ Examples
 
 Enqueue a CoffeeScript file that's in the theme directory:
 
-	enqueue_coffeescript('my-handle', get_template_directory().'/my-script.coffee');
+  enqueue_coffeescript('my-handle', get_template_directory().'/my-script.coffee');
 
 Enqueue multiple CS files, compiling them into a single output file:
 
-	$script1 = get_template_directory().'/script1.coffee';
-	$script2 = get_template_directory().'/script2.coffee';
-	enqueue_coffeescript('my-handle', array($script1, $script2));
+  $script1 = get_template_directory().'/script1.coffee';
+  $script2 = get_template_directory().'/script2.coffee';
+  enqueue_coffeescript('my-handle', array($script1, $script2));
 
 Enqueue a CS file in the footer with dependencies (the arguments are exactly the same as in [`wp_enqueue_script()`](http://codex.wordpress.org/Function_Reference/wp_enqueue_script)):
 
-	enqueue_coffeescript('my-handle', get_template_directory().'/my-script.coffee', array('dep1', 'dep2'), false, true);
+  enqueue_coffeescript('my-handle', get_template_directory().'/my-script.coffee', array('dep1', 'dep2'), false, true);
 
 Set a custom path to the CS executable (the default value is `coffeescript`):
 
-	add_filter('wpcs_executable', 'set_wpcs_executable');
-	function set_wpcs_executable($path) {
-		return '/my/path/to/coffeescript';
-	}
+  add_filter('wpcs_executable', 'set_wpcs_executable');
+  function set_wpcs_executable($path) {
+    return '/my/path/to/coffeescript';
+  }
 
 Compile the CS on every page load (the default behavior is to only compile when the JS has been modified):
 
-	add_filter('wpcs_caching_enabled', 'disable_wpcs_caching');
-	function disable_wpcs_caching($is_enabled) {
-		return false;
-	}
+  add_filter('wpcs_caching_enabled', 'disable_wpcs_caching');
+  function disable_wpcs_caching($is_enabled) {
+    return false;
+  }
 
 Frequently Asked Questions
 --------------------------

@@ -1,19 +1,19 @@
 <?php
 /*
-Plugin Name: WP CoffeeScript
-Plugin URI: http://wordpress.org/extend/plugins/wp-coffeescript/
-Description: Allows developers to easily use CoffeeScript in WordPress. Simply use enqueue_coffeescript(); the compilation is done automatically behind the scenes.
+Plugin Name: WP Riot Tag
+Plugin URI: http://wordpress.org/extend/plugins/wp-riottag/
+Description: Allows developers to easily use Riot Tag in WordPress. Simply use enqueue_riottag(); the compilation is done automatically behind the scenes.
 Author: Tom Benner
 Version: 1.0
-Author URI: 
+Author URI:
 */
 
 require_once dirname(__FILE__).'/functions.php';
-require_once dirname(__FILE__).'/lib/wp_coffeescript.php';
+require_once dirname(__FILE__).'/lib/wp_riottag.php';
 
-global $wpcs;
-$wpcs = new WpCoffeescript();
+global $wprt;
+$wprt = new WpRiottag();
 
-register_deactivation_hook(__FILE__, array($wpcs, 'deactivate'));
+register_deactivation_hook(__FILE__, array($wprt, 'deactivate'));
 
 ?>
